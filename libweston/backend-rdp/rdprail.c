@@ -881,7 +881,7 @@ rdp_debug_raw_guid_string(struct rdp_backend *b, const GUID *guid)
 static char *
 languageGuid_to_string(const GUID *guid)
 {
-	static_assert(sizeof(struct lang_GUID) == sizeof(GUID));
+	static_assert("GUID size", sizeof(struct lang_GUID) == sizeof(GUID));
 	static const struct lang_GUID c_GUID_NULL = GUID_NULL;
 	static const struct lang_GUID c_GUID_MS_JPNIME = GUID_MSIME_JPN;
 	static const struct lang_GUID c_GUID_GOOGLE_JPNIME = GUID_GOOGLEIME_JPN;
@@ -986,7 +986,7 @@ rail_client_LanguageImeInfo_callback(bool freeOnly, void *arg)
 		if (languageImeInfo->ProfileType == TF_PROFILETYPE_KEYBOARDLAYOUT) {
 			new_keyboard_layout = languageImeInfo->KeyboardLayout;
 		} else if (languageImeInfo->ProfileType == TF_PROFILETYPE_INPUTPROCESSOR) {
-			static_assert(sizeof(struct lang_GUID) == sizeof(GUID));
+			static_assert("GUID size", sizeof(struct lang_GUID) == sizeof(GUID));
 
 			static const struct lang_GUID c_GUID_MS_JPNIME = GUID_MSIME_JPN;
 			static const struct lang_GUID c_GUID_GOOGLE_JPNIME = GUID_GOOGLEIME_JPN;
