@@ -28,6 +28,7 @@
 #include <string.h>
 #include <assert.h>
 #include <libudev.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <sys/file.h>
 #include <errno.h>
